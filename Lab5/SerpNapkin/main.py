@@ -3,13 +3,13 @@ iterations_n = int(iterations)
 size = 100 #длина линии
 
 import turtle
-
+import time
 # #ниже переместим черепашку немного вправо, чтобы ближе к серединке рисовалось
 turtle.penup()
-turtle.forward(300)
+turtle.forward(50)
 turtle.pendown()
 
-turtle.speed(7) #изменим скорость рисования черепашки
+turtle.speed(10) #изменим скорость рисования черепашки
 
 #наклонили черепашку вправо
 turtle.right(30)
@@ -28,6 +28,13 @@ def napkinSer(iterations_n, size):
       turtle.left(120)
 
 
+start_time = time.perf_counter()
+
 napkinSer(iterations_n, size)
+
+final_time = time.perf_counter()
+
+napkinSerpTime = (final_time-start_time)/0.10
+print(napkinSerpTime)
 
 turtle.done() #чтобы окно рисования не закрылось
